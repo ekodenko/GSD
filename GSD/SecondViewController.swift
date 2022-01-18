@@ -41,7 +41,9 @@
         let queue = DispatchQueue.global(qos: .utility)
         queue.async {
             guard let url = self.imageURL, let imageData = try? Data(contentsOf: url) else {return}
-            self.image = UIImage(data: imageData)
+            DispatchQueue.main.sync {
+                self.image = UIImage(data: imageData)
+            }
         }
         }
     }
