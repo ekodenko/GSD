@@ -29,6 +29,10 @@
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchImage()
+        loginAlert()
+
+
+
     }
     fileprivate func loginAlert () {
         let ac = UIAlertController(title: "Заоегестрированы?", message: "Введите Ваш логин и пароль", preferredStyle: .alert)
